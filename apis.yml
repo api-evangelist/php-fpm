@@ -1,0 +1,89 @@
+aid: php-fpm
+name: PHP-FPM
+description: >-
+  PHP-FPM (FastCGI Process Manager) is the primary PHP FastCGI implementation
+  bundled with PHP for handling heavy-loaded sites, providing advanced
+  process management with multiple worker pools, graceful start/stop,
+  adaptive process spawning (static, dynamic, ondemand), slowlog tracking,
+  and accelerated upload support. It is configured via php.ini-style pool
+  files and is typically deployed behind a web server such as Nginx, Apache,
+  Caddy, or LiteSpeed via FastCGI. PHP-FPM exposes operational status pages
+  (in plain, JSON, XML, OpenMetrics, and HTML formats) but does not provide
+  a public HTTP API; it runs only on POSIX systems that support fork().
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - PHP
+  - FastCGI
+  - Process Manager
+  - Web Server
+  - Application Server
+  - Open Source
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/php-fpm/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: php-fpm:status-endpoint
+    name: PHP-FPM Status Endpoint
+    description: >-
+      Operational status endpoint exposed by PHP-FPM via the pm.status_path
+      directive. Returns pool statistics (active processes, idle processes,
+      accepted connections, slow requests) in plain text, JSON, XML,
+      OpenMetrics, or HTML. There is no public API; the endpoint is served
+      by the local web server through FastCGI on user-defined paths.
+    humanURL: https://www.php.net/manual/en/install.fpm.configuration.php
+    baseURL: http://localhost
+    tags:
+      - Status
+      - Monitoring
+      - OpenMetrics
+      - Process Manager
+    properties:
+      - type: Documentation
+        url: https://www.php.net/manual/en/install.fpm.php
+      - type: Configuration
+        url: https://www.php.net/manual/en/install.fpm.configuration.php
+      - type: Installation
+        url: https://www.php.net/manual/en/install.fpm.install.php
+
+common:
+  - type: Website
+    url: https://www.php.net/
+  - type: Documentation
+    url: https://www.php.net/manual/en/install.fpm.php
+  - type: Download
+    url: https://www.php.net/downloads.php
+  - type: GitHub Repository
+    url: https://github.com/php/php-src
+  - type: Issue Tracker
+    url: https://github.com/php/php-src/issues
+features:
+  - name: Worker Pool Management
+    description: >-
+      Multiple independent worker pools per FPM instance, each with its own
+      uid/gid, chroot, environment, php.ini overrides, and listen socket.
+  - name: Adaptive Process Spawning
+    description: >-
+      Static, dynamic, and ondemand process management modes that balance
+      latency, memory, and concurrency for different workloads.
+  - name: Slowlog and Diagnostics
+    description: >-
+      Per-pool slowlog captures backtraces of requests that exceed a
+      configurable execution time threshold.
+  - name: Status and Ping Endpoints
+    description: >-
+      Built-in pm.status_path and ping.path endpoints for health checks
+      and pool-level metrics in plain, JSON, XML, OpenMetrics, or HTML.
+  - name: Accelerated Upload Support
+    description: >-
+      Offload large file uploads to FPM-managed temporary storage to
+      reduce front-end web server load.
+  - name: Background Task Support
+    description: >-
+      fastcgi_finish_request() lets PHP scripts return a response to the
+      client and continue processing in the background.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
