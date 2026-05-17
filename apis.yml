@@ -55,7 +55,7 @@ common:
     url: https://www.php.net/manual/en/install.fpm.php
   - type: Download
     url: https://www.php.net/downloads.php
-  - type: GitHub Repository
+  - type: GitHubRepository
     url: https://github.com/php/php-src
   - type: Issue Tracker
     url: https://github.com/php/php-src/issues
