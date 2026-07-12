@@ -49,6 +49,10 @@ apis:
         url: https://www.php.net/manual/en/install.fpm.install.php
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/php-fpm-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/php-fpm-domain-security.yml
   - type: Website
     url: https://www.php.net/
   - type: Documentation
