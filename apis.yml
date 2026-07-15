@@ -49,6 +49,8 @@ apis:
         url: https://www.php.net/manual/en/install.fpm.install.php
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/php-fpm-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/php-fpm-vulnerability-disclosure.yml
   - type: DomainSecurity
