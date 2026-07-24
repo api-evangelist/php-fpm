@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: PHP-FPM Status and Endpoints Ping API
+  description: 'PHP-FPM (FastCGI Process Manager) does not expose a public HTTP API for
+
+    runtime configuration, but it does expose two operational HTTP endpoints
+
+    via the web server that proxies FastCGI requests to PHP-FPM. The status
+
+    endpoint is enabled by setting `pm.status_path` and reports pool
+
+    metrics in plain text, full text, HTML, JSON, XML, or OpenMetrics
+
+    format depending on a query-string flag. The ping endpoint is enabled
+
+    by setting `ping.path` and returns a configurable static response
+
+    (default `pong`) suitable for upstream health checks.
+
+
+    The actual paths are administrator-defined; the most common
+
+    conventions (`/fpm-status` and `/fpm-ping`) are modeled here. Authentication
+
+    and access control are handled by the fronting web server, not by
+
+    PHP-FPM itself.
+
+    '
+  version: 1.0.0
+  contact:
+    name: PHP-FPM documentation
+    url: https://www.php.net/manual/en/install.fpm.php
+  license:
+    name: PHP License
+    url: https://www.php.net/license/
+servers:
+- url: http://{host}
+  description: Web server fronting PHP-FPM.
+  variables:
+    host:
+      default: localhost
+      description: Hostname of the web server proxying FastCGI requests.
+tags:
+- name: Ping
+  description: PHP-FPM liveness check.
+paths:
+  /fpm-ping:
+    get:
+      tags:
+      - Ping
+      summary: PHP-FPM liveness check
+      description: 'Returns the configured `ping.response` value (default `pong`),
+
+        confirming that the PHP-FPM master and worker pool are responsive.
+
+        '
+      operationId: getPing
+      responses:
+        '200':
+          description: PHP-FPM ping response.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: pong
+externalDocs:
+  description: PHP-FPM status page documentation
+  url: https://www.php.net/manual/en/fpm.status.php
