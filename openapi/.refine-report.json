@@ -1,0 +1,16 @@
+{
+  "provider": "php-fpm",
+  "sources": [
+    "php-fpm-ping-api-openapi.yml",
+    "php-fpm-status-api-openapi.yml"
+  ],
+  "outputs": [
+    "php-fpm-ping-api-openapi.yml",
+    "php-fpm-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
