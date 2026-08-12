@@ -80,6 +80,9 @@ apis:
         url: https://www.php.net/manual/en/install.fpm.install.php
 
 common:
+  - type: License
+    name: BSD-3-Clause
+    url: https://github.com/php/php-src/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/php-fpm-agentic-access.yml
   - type: VulnerabilityDisclosure
