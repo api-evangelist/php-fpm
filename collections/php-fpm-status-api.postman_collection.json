@@ -1,0 +1,177 @@
+{
+  "item": [
+    {
+      "id": "e677f6dc-2cc2-4700-be14-2b453f841fb8",
+      "name": "Status",
+      "description": {
+        "content": "PHP-FPM pool status.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e31d910d-dac8-4328-840a-814d3620c224",
+          "name": "Get PHP-FPM pool status",
+          "request": {
+            "name": "Get PHP-FPM pool status",
+            "description": {
+              "content": "Returns PHP-FPM pool metrics. The output format is selected via a\nquery-string flag and may include per-process detail when `full`\nis set. The default response is plain text.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fpm-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "full",
+                  "value": "<string>",
+                  "description": "When present, includes per-process detail."
+                },
+                {
+                  "disabled": false,
+                  "key": "json",
+                  "value": "<string>",
+                  "description": "Return JSON output."
+                },
+                {
+                  "disabled": false,
+                  "key": "xml",
+                  "value": "<string>",
+                  "description": "Return XML output."
+                },
+                {
+                  "disabled": false,
+                  "key": "html",
+                  "value": "<string>",
+                  "description": "Return HTML output."
+                },
+                {
+                  "disabled": false,
+                  "key": "openmetrics",
+                  "value": "<string>",
+                  "description": "Return OpenMetrics output."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Hostname of the web server proxying FastCGI requests.",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4d3e720b-2352-4ac1-99b8-019e382824e2",
+              "name": "PHP-FPM status.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fpm-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "full",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "json",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "xml",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "html",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "openmetrics",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Hostname of the web server proxying FastCGI requests.",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pool\": \"string\",\n  \"process manager\": \"dynamic\",\n  \"start time\": 5650,\n  \"start since\": 9574,\n  \"accepted conn\": 4445,\n  \"listen queue\": 1606,\n  \"max listen queue\": 3698,\n  \"listen queue len\": 2953,\n  \"idle processes\": 1261,\n  \"active processes\": 5965,\n  \"total processes\": 1923,\n  \"max active processes\": 8528,\n  \"max children reached\": 9774,\n  \"slow requests\": 622\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the web server proxying FastCGI requests.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "http://{{host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b6b59ea8-b573-4f5e-95da-42c57655526f",
+    "name": "PHP-FPM and Endpoints Ping Status API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PHP-FPM (FastCGI Process Manager) does not expose a public HTTP API for\nruntime configuration, but it does expose two operational HTTP endpoints\nvia the web server that proxies FastCGI requests to PHP-FPM. The status\nendpoint is enabled by setting `pm.status_path` and reports pool\nmetrics in plain text, full text, HTML, JSON, XML, or OpenMetrics\nformat depending on a query-string flag. The ping endpoint is enabled\nby setting `ping.path` and returns a configurable static response\n(default `pong`) suitable for upstream health checks.\n\nThe actual paths are administrator-defined; the most common\nconventions (`/fpm-status` and `/fpm-ping`) are modeled here. Authentication\nand access control are handled by the fronting web server, not by\nPHP-FPM itself.\n\n\nContact Support:\n Name: PHP-FPM documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PHP-FPM Status and Endpoints Ping API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ping",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PHP-FPM liveness check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://{host}/fpm-ping"
+          },
+          "docs": "Returns the configured `ping.response` value (default `pong`),\nconfirming that the PHP-FPM master and worker pool are responsive.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

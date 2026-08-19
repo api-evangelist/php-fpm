@@ -1,0 +1,125 @@
+{
+  "item": [
+    {
+      "id": "a350dff5-03c9-4cf4-89e8-d3ebf20aa32f",
+      "name": "Ping",
+      "description": {
+        "content": "PHP-FPM liveness check.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0241650e-535b-41b8-b024-1bf123d929f5",
+          "name": "PHP-FPM liveness check",
+          "request": {
+            "name": "PHP-FPM liveness check",
+            "description": {
+              "content": "Returns the configured `ping.response` value (default `pong`),\nconfirming that the PHP-FPM master and worker pool are responsive.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fpm-ping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Hostname of the web server proxying FastCGI requests.",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc32b5a6-492f-4076-a561-91db39126909",
+              "name": "PHP-FPM ping response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fpm-ping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Hostname of the web server proxying FastCGI requests.",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "pong",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Hostname of the web server proxying FastCGI requests.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "http://{{host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "df11f8a4-bbf1-43ac-9b58-ccd6f3ad5241",
+    "name": "PHP-FPM Status and Endpoints Ping API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PHP-FPM (FastCGI Process Manager) does not expose a public HTTP API for\nruntime configuration, but it does expose two operational HTTP endpoints\nvia the web server that proxies FastCGI requests to PHP-FPM. The status\nendpoint is enabled by setting `pm.status_path` and reports pool\nmetrics in plain text, full text, HTML, JSON, XML, or OpenMetrics\nformat depending on a query-string flag. The ping endpoint is enabled\nby setting `ping.path` and returns a configurable static response\n(default `pong`) suitable for upstream health checks.\n\nThe actual paths are administrator-defined; the most common\nconventions (`/fpm-status` and `/fpm-ping`) are modeled here. Authentication\nand access control are handled by the fronting web server, not by\nPHP-FPM itself.\n\n\nContact Support:\n Name: PHP-FPM documentation",
+      "type": "text/plain"
+    }
+  }
+}
