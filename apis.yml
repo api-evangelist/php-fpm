@@ -11,6 +11,19 @@ description: >-
   (in plain, JSON, XML, OpenMetrics, and HTML formats) but does not provide
   a public HTTP API; it runs only on POSIX systems that support fork().
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: BSD-3-Clause
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -87,6 +100,14 @@ apis:
         url: https://www.php.net/manual/en/install.fpm.install.php
 
 common:
+  - type: IssueTracker
+    url: https://github.com/php/php-src/issues
+  - type: Releases
+    url: https://github.com/php/php-src/releases
+  - type: SecurityPolicy
+    url: https://github.com/php/php-src/blob/master/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/php/php-src/blob/master/CONTRIBUTING.md
   - type: License
     name: BSD-3-Clause
     url: https://github.com/php/php-src/blob/master/LICENSE
