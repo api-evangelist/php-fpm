@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: PHP-FPM Status and Endpoints Ping API
   description: 'PHP-FPM (FastCGI Process Manager) does not expose a public HTTP API for
