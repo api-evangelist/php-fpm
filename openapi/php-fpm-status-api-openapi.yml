@@ -1,32 +1,11 @@
 openapi: 3.2.0
 info:
-  title: PHP-FPM and Endpoints Ping Status API
+  title: PHP-FPM and Ping Endpoints Status API
   description: 'PHP-FPM (FastCGI Process Manager) does not expose a public HTTP API for
 
     runtime configuration, but it does expose two operational HTTP endpoints
 
-    via the web server that proxies FastCGI requests to PHP-FPM. The status
-
-    endpoint is enabled by setting `pm.status_path` and reports pool
-
-    metrics in plain text, full text, HTML, JSON, XML, or OpenMetrics
-
-    format depending on a query-string flag. The ping endpoint is enabled
-
-    by setting `ping.path` and returns a configurable static response
-
-    (default `pong`) suitable for upstream health checks.
-
-
-    The actual paths are administrator-defined; the most common
-
-    conventions (`/fpm-status` and `/fpm-ping`) are modeled here. Authentication
-
-    and access control are handled by the fronting web server, not by
-
-    PHP-FPM itself.
-
-    '
+    via the web server that proxies FastCGI requests to PHP-FPM.'
   version: 1.0.0
   contact:
     name: PHP-FPM documentation
@@ -54,9 +33,7 @@ paths:
 
         query-string flag and may include per-process detail when `full`
 
-        is set. The default response is plain text.
-
-        '
+        is set. The default response is plain text.'
       operationId: getStatus
       parameters:
       - in: query

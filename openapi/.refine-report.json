@@ -1,8 +1,7 @@
 {
   "provider": "php-fpm",
   "sources": [
-    "php-fpm-ping-api-openapi.yml",
-    "php-fpm-status-api-openapi.yml"
+    "_original/php-fpm-openapi.yml"
   ],
   "outputs": [
     "php-fpm-ping-api-openapi.yml",
@@ -12,9 +11,12 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "php-fpm-ping-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "php-fpm-status-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "php-fpm-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "php-fpm-ping-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "php-fpm-status-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
