@@ -42,7 +42,7 @@ tags:
   - Process Manager
   - Web Server
   - Application Server
-  - Open-Source
+  - Open Source
 tags_raw:
   - PHP
   - FastCGI
@@ -50,6 +50,7 @@ tags_raw:
   - Web Server
   - Application Server
   - Open Source
+  - Open-Source
 url: >-
   https://raw.githubusercontent.com/api-evangelist/php-fpm/refs/heads/main/apis.yml
 created: '2026-05-11'
