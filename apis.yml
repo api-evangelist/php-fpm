@@ -54,7 +54,7 @@ tags_raw:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/php-fpm/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-07-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: php-fpm:php-fpm-ping-api
@@ -101,6 +101,8 @@ apis:
         url: https://www.php.net/manual/en/install.fpm.install.php
 
 common:
+  - url: https://www.php.net/feed.atom
+    type: BlogRSS
   - type: IssueTracker
     url: https://github.com/php/php-src/issues
   - type: Releases
