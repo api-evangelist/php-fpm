@@ -5,10 +5,10 @@
       "source": "https://www.php.net/feed.atom",
       "feed_url": "https://www.php.net/feed.atom",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "feed"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 34,
+  "fetched": "2026-10-17T14:53:57Z"
 }
